@@ -1,4 +1,4 @@
-name: Taksi Copy1 CI/CD Deployment
+name: Taksi Copy CI/CD Deployment
 
 on:
   push:
