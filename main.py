@@ -8,7 +8,7 @@ phone_number = '+998973024959'
 client = TelegramClient('userbot', api_id, api_hash)
 
 SOURCE_GROUP_ID = 1644715431
-DESTINATION_GROUP_ID = -1002306592274
+DESTINATION_GROUP_ID = 5130124323
 
 # Oqibatid = -1644715431
 # mersedes = 2092343101
