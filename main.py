@@ -10,7 +10,7 @@ phone_number = '+998973024959'
 BOT_TOKEN = '7915202770:AAHfx_y_cjThFpJWlj8i-alWAHkRWxKnr9g'
 
 SOURCE_GROUP_ID = 1644715431
-DESTINATION_GROUP_ID = -1002425650927
+DESTINATION_GROUP_ID = -1002477688128
 
 client = TelegramClient('userbot', api_id, api_hash)
 bot = Bot(token=BOT_TOKEN)
