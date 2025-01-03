@@ -7,7 +7,7 @@ api_id = '24337774'
 api_hash = '15eaac65b5312d9b7f91a5f43c478c88'
 phone_number = '+998973024959'
 
-BOT_TOKEN = '7660895998:AAFXezwUF68t861ym2kPGUIO2xsPl8MGCrI'
+BOT_TOKEN = '7915202770:AAHfx_y_cjThFpJWlj8i-alWAHkRWxKnr9g'
 
 SOURCE_GROUP_ID = 1644715431
 DESTINATION_GROUP_ID = -1002477688128
@@ -60,4 +60,5 @@ async def main():
     await client.run_until_disconnected()
 
 
-asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())  # Asinxron ishni boshlash uchun asyncio.run() ishlatish
