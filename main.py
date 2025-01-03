@@ -61,4 +61,6 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.run(main())  # Asinxron ishni boshlash uchun asyncio.run() ishlatish
+    # Aniq asyncio loopni o'rnatish
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(main())  # Asinxron ishni boshlash uchun asyncio.run() ishlatish
