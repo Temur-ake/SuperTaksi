@@ -17,6 +17,7 @@ bot = Bot(token=BOT_TOKEN)
 
 ALLOWED_BOTS = ["Andijon_toshkent_2bot", "andijon_toshkent_taxi_7bot"]
 
+
 # Telefon raqamini aniqlash funksiyasi
 def contains_phone_number(text):
     import re
@@ -49,6 +50,13 @@ async def forward_message(event):
             try:
                 await bot.send_message(chat_id=DESTINATION_GROUP_ID, text=text)
                 print("Message without buttons forwarded to destination group.")
+            except Exception as e:
+                print(f"Error while sending message: {e}")
+                await asyncio.sleep(5)
+        if contains_phone_number(text):
+            try:
+                await bot.send_message(chat_id=DESTINATION_GROUP_ID, text=text)
+                print("Message with phone number forwarded to destination group.")
             except Exception as e:
                 print(f"Error while sending message: {e}")
                 await asyncio.sleep(5)
