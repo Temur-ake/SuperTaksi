@@ -29,6 +29,8 @@ def contains_phone_number(text):
 async def forward_message(event):
     sender = await event.get_sender()
     sender_username = sender.username or "N/A"
+    message = event.message
+    text = message.text or "---"
 
     # Faqat ruxsat berilgan botlardan kelgan xabarlar ishlanadi
     if sender_username in ALLOWED_BOTS:
@@ -53,13 +55,13 @@ async def forward_message(event):
             except Exception as e:
                 print(f"Error while sending message: {e}")
                 await asyncio.sleep(5)
-        if contains_phone_number(text):
-            try:
-                await bot.send_message(chat_id=DESTINATION_GROUP_ID, text=text)
-                print("Message with phone number forwarded to destination group.")
-            except Exception as e:
-                print(f"Error while sending message: {e}")
-                await asyncio.sleep(5)
+    if contains_phone_number(text):
+        try:
+            await bot.send_message(chat_id=DESTINATION_GROUP_ID, text=text)
+            print("Message with phone number forwarded to destination group.")
+        except Exception as e:
+            print(f"Error while sending message: {e}")
+            await asyncio.sleep(5)
 
 
 async def main():
