@@ -47,7 +47,6 @@ async def forward_message(event):
                     print(f"Error while sending message: {e}")
                     await asyncio.sleep(5)
             else:
-                await bot.send_message(chat_id=DESTINATION_GROUP_ID, text=text)
                 print("No phone number found in the button message. Skipping...")
         else:  # Tugmalar mavjud bo'lmasa
             try:
