@@ -43,7 +43,6 @@ async def forward_message(event):
             if contains_phone_number(text):  # Telefon raqami mavjud bo'lsa
                 try:
                     # await bot.send_message(chat_id=ulugbek, text=text)
-                    await bot.send_message(chat_id=5906849014, text=text)
                     await bot.send_message(chat_id=DESTINATION_GROUP_ID, text=text)
                     await bot.send_message(chat_id=d2, text=text)
                     print("Message with phone number forwarded to destination group.")
@@ -61,7 +60,6 @@ async def forward_message(event):
     if contains_phone_number(text):
         try:
             # await bot.send_message(chat_id=ulugbek, text=text)
-            await bot.send_message(chat_id=5906849014, text=text)
             await bot.send_message(chat_id=DESTINATION_GROUP_ID, text=text)
             await bot.send_message(chat_id=d2, text=text)
             print("Message with phone number forwarded to destination group.")
