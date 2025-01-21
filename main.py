@@ -11,6 +11,7 @@ BOT_TOKEN = '7660895998:AAFXezwUF68t861ym2kPGUIO2xsPl8MGCrI'
 
 SOURCE_GROUP_ID = 1644715431
 DESTINATION_GROUP_ID = -1002487251295
+d2 = -1002288740908
 
 client = TelegramClient('userbot', api_id, api_hash)
 bot = Bot(token=BOT_TOKEN)
@@ -18,7 +19,6 @@ bot = Bot(token=BOT_TOKEN)
 ALLOWED_BOTS = ["Andijon_toshkent_2bot", "andijon_toshkent_taxi_7bot"]
 
 
-# Telefon raqamini aniqlash funksiyasi
 def contains_phone_number(text):
     import re
     phone_pattern = r'\b(?:\+?998)?[\s-]?[\(]?\d{2,3}[\)]?[\s-]?\d{3}[\s-]?\d{2,3}[\s-]?\d{2,3}\b'
@@ -32,7 +32,7 @@ async def forward_message(event):
     message = event.message
     text = message.text or "---"
 
-    # Faqat ruxsat berilgan botlardan kelgan xabarlar ishlanadi
+
     if sender_username in ALLOWED_BOTS:
         message = event.message
         text = message.text or "---"
@@ -42,13 +42,14 @@ async def forward_message(event):
             if contains_phone_number(text):  # Telefon raqami mavjud bo'lsa
                 try:
                     await bot.send_message(chat_id=DESTINATION_GROUP_ID, text=text)
+                    await bot.send_message(chat_id=d2, text=text)
                     print("Message with phone number forwarded to destination group.")
                 except Exception as e:
                     print(f"Error while sending message: {e}")
                     await asyncio.sleep(5)
             else:
                 print("No phone number found in the button message. Skipping...")
-        else:  # Tugmalar mavjud bo'lmasa
+        else:
             try:
                 print("Message without buttons forwarded to destination group.")
             except Exception as e:
@@ -57,6 +58,7 @@ async def forward_message(event):
     if contains_phone_number(text):
         try:
             await bot.send_message(chat_id=DESTINATION_GROUP_ID, text=text)
+            await bot.send_message(chat_id=d2, text=text)
             print("Message with phone number forwarded to destination group.")
         except Exception as e:
             print(f"Error while sending message: {e}")
