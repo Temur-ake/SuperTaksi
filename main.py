@@ -42,7 +42,7 @@ async def forward_message(event):
             print("Message has inline buttons. Checking for phone number...")
             if contains_phone_number(text):  # Telefon raqami mavjud bo'lsa
                 try:
-                    await bot.send_message(chat_id=ulugbek, text=text)
+                    # await bot.send_message(chat_id=ulugbek, text=text)
                     await bot.send_message(chat_id=5906849014, text=text)
                     await bot.send_message(chat_id=DESTINATION_GROUP_ID, text=text)
                     await bot.send_message(chat_id=d2, text=text)
@@ -60,7 +60,7 @@ async def forward_message(event):
                 await asyncio.sleep(5)
     if contains_phone_number(text):
         try:
-            await bot.send_message(chat_id=ulugbek, text=text)
+            # await bot.send_message(chat_id=ulugbek, text=text)
             await bot.send_message(chat_id=5906849014, text=text)
             await bot.send_message(chat_id=DESTINATION_GROUP_ID, text=text)
             await bot.send_message(chat_id=d2, text=text)
