@@ -31,11 +31,11 @@ async def forward_message(event):
     sender = await event.get_sender()
     sender_username = sender.username or "N/A"
     message = event.message
-    text = message.text or "---"
+    text = f"Клент хабари \n\n{message.text}" or "---"
 
     if sender_username in ALLOWED_BOTS:
         message = event.message
-        text = message.text or "---"
+        text = f"Клент хабари \n\n{message.text}" or "---"
 
         if message.reply_markup:  # Tugmalar mavjud bo'lsa
             print("Message has inline buttons. Checking for phone number...")
